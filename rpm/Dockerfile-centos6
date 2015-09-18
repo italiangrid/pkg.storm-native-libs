@@ -1,6 +1,9 @@
 FROM  italiangrid/build-centos6
 
-#run yum -y install oracle-instantclient-basic
+run yum -y install pkgconfig swig libacl-devel \
+  gpfs.base \
+  lcmaps-without-gsi-devel \
+  lcmaps-interface 
 user build
 add Makefile ./storm-native-libs.spec.in /home/build/
 workdir /home/build
