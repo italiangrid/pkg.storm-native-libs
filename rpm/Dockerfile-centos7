@@ -1,5 +1,8 @@
 FROM  italiangrid/build-centos7
 
+run yum -y install pkgconfig swig libacl-devel \
+  lcmaps-without-gsi-devel \
+  lcmaps-interface
 user build
 add Makefile ./storm-native-libs.spec.in /home/build/
 workdir /home/build
